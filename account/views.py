@@ -86,3 +86,31 @@ class StudentLoginView(APIView):
             "refresh": str(refresh),
             "access": str(refresh.access_token)
         }, status=status.HTTP_200_OK)
+    
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user:
+            login(request, user)
+
+            # 🔥 ROLE BO'YICHA YO'NALTIRISH
+            if user.role == 'admin':
+                return redirect('admin_dashboard')
+
+            elif user.role == 'trainer':
+                return redirect('trainer_dashboard')
+
+            elif user.role == 'student':
+                return redirect('student_dashboard')
+
+            else:
+                return redirect('/')
+            
+    return render(request, 'login.html')

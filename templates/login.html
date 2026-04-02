@@ -1,0 +1,36 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+body {
+    background: linear-gradient(135deg, #1e3a8a, #9333ea);
+}
+</style>
+</head>
+
+<body class="flex items-center justify-center h-screen text-white">
+
+<div class="bg-white bg-opacity-10 p-10 rounded-xl shadow-lg w-96 backdrop-blur">
+    <h2 class="text-3xl mb-6 text-center">Login</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Username"
+        class="w-full p-3 mb-4 rounded bg-white bg-opacity-20">
+
+        <input type="password" name="password" placeholder="Password"
+        class="w-full p-3 mb-6 rounded bg-white bg-opacity-20">
+
+        <button class="w-full bg-purple-600 p-3 rounded hover:bg-purple-800">
+            Login
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
+```

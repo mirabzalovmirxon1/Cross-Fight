@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross Fight | Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard-bg"></div>
+
+<div class="sidebar">
+    <h2>Cross Fight</h2>
+    <ul>
+        <li onclick="navigate('dashboard')">🏠 Dashboard</li>
+        <li onclick="navigate('assignments')">📚 Assignments</li>
+        <li onclick="navigate('fight')">⚔️ Fight Arena</li>
+        <li onclick="navigate('leaderboard')">🏆 Leaderboard</li>
+        <li onclick="navigate('profile')">👤 Profile</li>
+    </ul>
+</div>
+
+<div class="main">
+    <header>
+        <h2>Leaderboard / Reyting</h2>
+        <div class="filters">
+            <button onclick="filterLeaderboard('weekly')">Weekly</button>
+            <button onclick="filterLeaderboard('monthly')">Monthly</button>
+            <button onclick="filterLeaderboard('global')">Global</button>
+        </div>
+    </header>
+
+    <section class="leaderboard-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Level</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Leaderboard entries will be inserted here via JS -->
+            </tbody>
+        </table>
+    </section>
+</div>
+
+
+<script src="leaderboard.js"></script>
+</body>
+</html>

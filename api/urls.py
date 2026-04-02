@@ -10,4 +10,10 @@ router.register(r'enrollments', EnrollmentViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    
+    # APPLAR
+    path('api/', include('account.urls')),
+    path('api/', include('training.urls')),
+    # Assignments
+    path('api/', include('assignments.urls')),
 ]
